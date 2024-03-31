@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Home, Specific, Cart, Products, Contact } from './routes';
+import { Home, Specific, Cart, Products, Contact, CheckoutSuccess } from './routes';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      },
+      {
+        path: 'cart/success',
+        element: <CheckoutSuccess />,
       },
     ]
   }
