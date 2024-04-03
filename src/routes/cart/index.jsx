@@ -1,16 +1,13 @@
+import { useEffect } from 'react';
 import { useCartStore } from '../../stores'
 import { Link } from 'react-router-dom'
 
 export function Cart() {
-  const { cart, removeFromCart, clearCart } = useCartStore((state) => state);
+  const { cart, addToCart, removeFromCart, clearCart } = useCartStore((state) => state);
 
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
-  const totalDiscountedPrice = cart.reduce((acc, curr) => acc + curr.discountedPrice, 0);
+  const totalPrice = cart.reduce((total, product) => total + product.price, 0);
+  const totalDiscountedPrice = cart.reduce((total, product) => total + product.discountedPrice, 0);
   const totalDiscount = totalPrice - totalDiscountedPrice;
-
-  const handleCheckout = () => {
-    clearCart();
-  };
 
     return (
       <>
@@ -31,11 +28,10 @@ export function Cart() {
           <h3>Total Discounted Price: {totalDiscountedPrice.toFixed(2)}</h3>
           <h3>Total Discount: {totalDiscount.toFixed(2)}</h3>
           <Link to="/cart/success">
-          <button onClick={handleCheckout}>
-            Checkout
-          </button>
+          <button>Checkout</button>
           </Link>
         </div>
       </>
     )
   }
+  

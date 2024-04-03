@@ -4,10 +4,9 @@ import { useCartStore } from "../../stores.js";
 
 export function Specific() {
   const { id } = useParams();
-  const { addToCart } = useCartStore((state) => state);
+  const { cart, addToCart } = useCartStore((state) => state);
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,18 +21,13 @@ export function Specific() {
       setLoading(false)
     }}
     fetchData();
-  }, [])
+  }, [id])
 
-  const incrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-  const decrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity > 1 ? prevQuantity - 1 : 1);
-  };
+  console.log(cart)
+
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity });
-  };
-
+    addToCart(product);
+  }
 
   if (loading) {
     return <p>Loading...</p>
@@ -79,16 +73,6 @@ export function Specific() {
 
             <p className="text-xs mt-8">Description:</p>
             <p className="text-sm">{product.description}</p>
-
-            <div className="quantity-selector mt-7 flex justify-center items-center">
-              <button onClick={decrementQuantity} className="mr-5 text-medium text-2xl">
-                -
-              </button>
-              <span className="text-sm px-2 py-0.5">{quantity}</span>
-              <button onClick={incrementQuantity} className="ml-5 text-medium text-xl">
-                +
-              </button>
-            </div>
 
           <button 
             onClick={handleAddToCart}
