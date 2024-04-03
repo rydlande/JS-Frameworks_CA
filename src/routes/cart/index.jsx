@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { useCartStore } from '../../stores'
 import { Link } from 'react-router-dom'
+import { CartCard } from '../../components';
 
 export function Cart() {
-  const { cart, addToCart, removeFromCart, clearCart } = useCartStore((state) => state);
+  const { cart } = useCartStore((state) => state);
 
   const totalPrice = cart.reduce((total, product) => total + product.price, 0);
   const totalDiscountedPrice = cart.reduce((total, product) => total + product.discountedPrice, 0);
@@ -13,15 +13,7 @@ export function Cart() {
       <>
         <h1>Cart</h1>
         
-          {cart.map((product) => (
-            <div key={product.id}>
-              <img src={product.image.url} alt={product.title} />
-              <h2>{product.title}</h2>
-              <p>Discounted Price: {product.discountedPrice}</p>
-              <p>Discount: {product.price - product.discountedPrice}</p>
-              <button onClick={(() => {removeFromCart(product.id)})}>Remove from cart</button>
-            </div>
-          ))}
+        <CartCard />
         
         <div>
           <h3 className='line-through	'>Total Price: {totalPrice.toFixed(2)}</h3>
