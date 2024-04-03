@@ -1,0 +1,6 @@
+input:checked + nav {
+    position: absolute;
+    display: flex;
+    background-color: #fafafa;
+    flex-direction: column;
+  }

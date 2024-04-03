@@ -1,5 +1,4 @@
 import { Header, Footer } from "../components";
-import './layout.css';
 
 export function Layout({ children }) {
   return (

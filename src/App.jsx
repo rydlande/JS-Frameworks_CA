@@ -1,4 +1,3 @@
-import './App.css'
 import { Layout } from './layout'
 import { Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
