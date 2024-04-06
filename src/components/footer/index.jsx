@@ -2,7 +2,7 @@
 export function Footer() {
   return (
     <footer>
-      <p>&copy; 2021 Nonsense</p>
+      <p className="text-xs my-1 mx-2">&copy; 2021 Nonsense</p>
     </footer>
   );
 }

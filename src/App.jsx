@@ -4,18 +4,23 @@ import { useEffect } from 'react';
 import { useProductStore } from './stores';
 
 function App() {
-  const fetchProducts = useProductStore((state) => state.fetchProducts);
+  const { products, fetchProducts } = useProductStore((state) => ({
+    products: state.products,
+    fetchProducts: state.fetchProducts,
+  }));
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
+  }, []);
 
 
   return (
     <>
-      <Layout>
-        <Outlet />
+    <div className="flex flex-col h-screen">
+      <Layout products={products}>
+        <Outlet context={{ products }} />
       </Layout>
+    </div>
     </>
   )
 }
