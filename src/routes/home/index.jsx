@@ -1,10 +1,10 @@
 //import { Loader } from '../../components'
-import { ProductsCardSkeleton } from '../../components'
+import { ProductsSkeleton } from '../../components'
 
 export function Home() {
     return (
       <>
-        <ProductsCardSkeleton />
+        <ProductsSkeleton />
         <h1>Home</h1>
       </>
     )

@@ -1,11 +1,7 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-testing cleanup
+### Want to fix:
+    - ønsker å kunne vise en halv stjerne på items med rating x.5
+    - total rating er feil på items, har lyst å finne total score selv med å summere alle ratings og dele på antall ratings
+    - designe home-page
+    - lage skeleton til home-page
+    - justere litt på bildene som vises på specific-page
+    - nytt design på contact-page

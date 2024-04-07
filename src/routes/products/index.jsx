@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ProductsCard } from "../../components";
 import { useProductStore } from '../../stores';
-import { ProductsCardSkeleton } from '../../components/skeletons/productsCard.jsx'
+import { ProductsSkeleton } from '../../components'
 
 
 export function Products() {
   const { products, loading } = useProductStore(state => ({ products: state.products, loading: state.loading }));
 
   if (loading) {
-    return <ProductsCardSkeleton />;
+    return <ProductsSkeleton />;
   }
 
     return (

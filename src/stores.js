@@ -72,6 +72,6 @@ export const useProductStore = create((set) => ({
         console.error("Failed to fetch products:", error);
         set({ loading: false });
       }
-    }, 3000);
+    }, 1000);
   },
 }));
