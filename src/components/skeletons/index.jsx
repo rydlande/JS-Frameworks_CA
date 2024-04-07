@@ -1,3 +1,4 @@
-import { ProductsCardSkeleton } from "./productsCard";
+import { ProductsSkeleton } from "./productsSkeleton";
+import { SpecificSkeleton } from "./specificSkeleton";
 
-export { ProductsCardSkeleton };
+export { ProductsSkeleton, SpecificSkeleton };

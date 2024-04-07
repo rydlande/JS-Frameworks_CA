@@ -63,13 +63,15 @@ export const useProductStore = create((set) => ({
 
   fetchProducts: async () => {
     set({ loading: true });
-    try {
-      const res = await fetch('https://v2.api.noroff.dev/online-shop/');
-      const data = await res.json();
-      set({ products: data.data, loading: false });
-    } catch (error) {
-      console.error("Failed to fetch products:", error);
-      set({ loading: false });
-    }
+    setTimeout(async () => {
+      try {
+        const res = await fetch('https://v2.api.noroff.dev/online-shop/');
+        const data = await res.json();
+        set({ products: data.data, loading: false });
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+        set({ loading: false });
+      }
+    }, 1000);
   },
 }));
