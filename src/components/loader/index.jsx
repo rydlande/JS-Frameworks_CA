@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 
 export const Loader = () => {
@@ -11,7 +11,7 @@ export const Loader = () => {
         style={{ height: '300px', width: '300px' }}
       />
     </div>
-  );
+  ); */
   /* const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
@@ -35,4 +35,5 @@ export const Loader = () => {
       {animationData && <Lottie animationData={animationData} loop autoplay style={style} />}
     </>
   ); */
-};
+/* };
+ */
