@@ -1,25 +1,26 @@
 import { useCartStore } from "../../../stores.js";
 
 export function SpecificCard({ product }) {
-    const { addToCart } = useCartStore((state) => state);
+    const { cart, addToCart } = useCartStore((state) => state);
 
+    console.log(cart)
     const handleAddToCart = () => {
         addToCart(product);
       }
 
-    const renderStars = (rating) => {
-      let stars = [];
-      for (let i = 1; i <= 5; i++) {
-        stars.push(
-          <span key={i} className={`${i <= rating ? 'text-pink-300' : 'text-gray-300'} text-xs`}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 lg:w-4 lg:h-4">
-              <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
-            </svg>
-          </span>
-        );
-      }
-      return stars;
-    };  
+      const renderStars = (rating) => {
+        let stars = [];
+        for (let i = 1; i <= 5; i++) {
+          stars.push(
+            <span key={i} className={`${i <= rating ? 'text-blue-300' : 'text-gray-200'} text-xs lg:text-lg`}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 lg:w-4 lg:h-4">
+                <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
+              </svg>            
+            </span>
+          );
+        }
+        return stars;
+      };
 
     return (
         <>
@@ -62,7 +63,7 @@ export function SpecificCard({ product }) {
 
                       <button 
                         onClick={handleAddToCart}
-                        className="text-sm font-light border-2 border-pink-200 hover:bg-pink-300 text-black hover:text-white py-1.5 px-3 rounded-sm mt-8"
+                        className="text-sm font-light border-2 border-blue-200 hover:bg-blue-300 text-black hover:text-white py-1.5 px-3 rounded-sm mt-8"
                       >
                         Add to cart
                       </button>
@@ -77,11 +78,12 @@ export function SpecificCard({ product }) {
                       <div key={review.id} className="p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100 mt-3">
                         <p className="text-sm font-medium">{review.username}</p>
                         <div className="flex items-center mt-0.5">
-                          {renderStars(review.rating)}
+                          {renderStars(review.rating)} 
                         </div>
                         <p className="text-xs mt-3.5">{review.description}</p>
                       </div>
                     ))}
+
                   </div>
                 </div>
               </div>
@@ -123,7 +125,7 @@ export function SpecificCard({ product }) {
                     <div className="flex justify-center">
                       <button 
                         onClick={handleAddToCart}
-                        className="text-sm font-light border-2 border-pink-200 hover:bg-pink-300 text-black hover:text-white py-1.5 px-3 rounded-sm mt-8"
+                        className="text-sm font-light border-2 border-blue-200 hover:bg-blue-300 text-black hover:text-white py-1.5 px-3 rounded-sm mt-8"
                       >
                         Add to cart
                       </button>

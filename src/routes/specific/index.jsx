@@ -31,7 +31,7 @@ export function Specific() {
     <>
       <div className="mx-1 mt-28 lg:mx-28">
       <nav className="text-xs mt-5 lg:text-sm lg:mb-7">
-          <ol className="flex text-pink-400">
+          <ol className="flex text-blue-400">
             <li className="mr-1.5">
               <Link to="/">Home</Link>
             </li>
