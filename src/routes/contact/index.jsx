@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 
 const schema = yup.object().shape({
   name: yup.string().required('This field is required').min(3, 'Name must be at least 3 characters long'),
@@ -11,249 +12,82 @@ const schema = yup.object().shape({
 });
 
 export function Contact() {
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema),
   });
 
+  
+  
   const onSubmit = data => {
     console.log('Form submission is successful.', data);
+    setIsSubmittedSuccessfully(true);
+    reset({
+      name: '',
+      subject: '',
+      email: '',
+      body: '',
+    });  
   };
 
   return (
     <>
-      <h1>Contact</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="name">Full name:</label>
-        <input
-          type="text"
-          {...register('name')}
-        />
-        {errors.name && <p>{errors.name.message}</p>}
+      <div>
+        <div className='mx-1 mt-28 lg:mx-28 flex flex-col items-center'>
+          <h1>Contact Us</h1>
+          <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-72 lg:w-96 rounded-sm p-4'>
+            <label 
+              htmlFor="name" 
+              className='text-sm font-light text-gray-950 pt-4 pb-1'
+            >Full name:</label>
+            <input
+              type="text"
+              className='rounded-sm px-2 py-1 bg-pink-100'
+              {...register('name')}
+            />
+            {errors.name && <p className='text-xs text-pink-500'>{errors.name.message}</p>}
 
-        <label htmlFor="subject">Subject:</label>
-        <input
-          type="text"
-          {...register('subject')}
-        />
-        {errors.subject && <p>{errors.subject.message}</p>}
+            <label 
+              htmlFor="subject"
+              className='text-sm font-light text-gray-950 pt-4 pb-1'
+            >Subject:</label>
+            <input
+              type="text"
+              className='rounded-sm px-2 py-1 bg-pink-100 '
+              {...register('subject')}
+            />
+            {errors.subject && <p className='text-xs text-pink-500'>{errors.subject.message}</p>}
 
-        <label htmlFor="email">Your email:</label>
-        <input
-          type="email"
-          {...register('email')}
-        />
-        {errors.email && <p>{errors.email.message}</p>}
+            <label 
+              htmlFor="email"
+              className='text-sm font-light text-gray-950 pt-4 pb-1'
+            >Your email:</label>
+            <input
+              type="email"
+              className='rounded-sm px-2 py-1 bg-pink-100'
+              {...register('email')}
+            />
+            {errors.email && <p className='text-xs text-pink-500'>{errors.email.message}</p>}
 
-        <label htmlFor="body">Body:</label>
-        <textarea
-          {...register('body')}
-        />
-        {errors.body && <p>{errors.body.message}</p>}
+            <label 
+              htmlFor="body"
+              className='text-sm font-light text-gray-950 pt-4 pb-1'
+            >Body:</label>
+            <textarea 
+              className='rounded-sm px-2 py-1 bg-pink-100'
+              {...register('body')}
+            />
+            {errors.body && <p className='text-xs text-pink-500'>{errors.body.message}</p>}
 
-        <button type="submit">Submit</button>
-      </form>
+            {isSubmittedSuccessfully && <p className="text-pink-600 mt-2">Form submitted successfully!</p>}
+
+            <button 
+              type="submit"
+              className='border border-pink-300 px-2 py-1.5 hover:bg-pink-300 hover:text-black mt-8 rounded-sm'
+            >Submit</button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
-
-
-/* import { useState } from "react"
-
-export function Contact() {
-  const [name, setName] = useState('') //Minimum number of characters is 3, required
-  const [subject, setSubject] = useState('') //Minimum number of characters is 3, required
-  const [email, setEmail] = useState('') //Must be a valid email address, required
-  const [body, setBody] = useState('') //Minimum number of characters is 3, required
-
-  const [errorMessage, setErrorMessage] = useState({
-    name: '',
-    subject: '',
-    email: '',
-    body: ''
-  }) */
-
-  /* function handleSubmit(e) {
-    e.preventDefault()
-
-    setErrorMessage({
-      name: '',
-      subject: '',
-      email: '',
-      body: ''
-    });
-
-    let success = true;
-    const output= {};
-    console.log(name, subject, email, body)
-
-    if (!name) {
-      success = false;
-      output.name = 'This field is required';
-    } else if (name.length < 3) {
-      success = false;
-      output.name = 'Name must be at least 3 characters long';
-    }
-    
-    if (!subject) {
-      success = false;
-      output.subject = 'This field is required';
-    } else if (subject.length < 3) {
-      success = false;
-      output.subject = 'Subject must be at least 3 characters long';
-    }
-    
-    if (!email) {
-      success = false;
-      output.email = 'This field is required';
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        success = false;
-        output.email = 'Email must be a valid email address';
-      }
-    }
-    if (!body) {
-      success = false;
-      output.body = 'This field is required';
-    } else if (body.length < 3) {
-      success = false;
-      output.body = 'Body must be at least 3 characters long';
-    }
-
-    setErrorMessage(output);
-
-    if (success) {
-      console.log('Form submission is successful.');
-      console.log({ name, subject, email, body });
-    } else {
-      console.log('Form validation failed.');
-      console.log(output);
-    }
-  } */
-  /* function handleSubmit(e) {
-    e.preventDefault();
-    
-    const initialErrorState = {
-      name: '',
-      subject: '',
-      email: '',
-      body: ''
-    };
-
-    let success = true;
-
-    setErrorMessage(initialErrorState);
-  
-    if (!name) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, name: 'This field is required' });
-      return;
-    } else if (name.length < 3) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, name: 'Name must be at least 3 characters long' });
-      return;
-    }
-    
-    if (!subject) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, subject: 'This field is required' });
-      return;
-    } else if (subject.length < 3) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, subject: 'Subject must be at least 3 characters long' });
-      return;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, email: 'This field is required' });
-      return;
-    } else if (!emailRegex.test(email)) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, email: 'Email must be a valid email address' });
-      return;
-    }
-    
-    if (!body) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, body: 'This field is required' });
-      return;
-    } else if (body.length < 3) {
-      success = false;
-      setErrorMessage({ ...initialErrorState, body: 'Body must be at least 3 characters long' });
-      return;
-    }
-  
-    if (success) {
-      console.log('Form submission is successful.');
-      console.log({ name, subject, email, body });
-    }
-  }
-  
-
-  function handleName(e) {
-    setName(e.target.value)
-  }
-
-  function handleSubject(e) {
-    setSubject(e.target.value)
-  }
-
-  function handleEmail(e) {
-    setEmail(e.target.value)
-  }
-
-  function handleBody(e) {
-    setBody(e.target.value)
-  }
-
-    return (
-      <>
-        <h1>Contact</h1>
-        <form action='' onSubmit={handleSubmit}>
-          <label htmlFor="name">Full name:</label>
-          <input 
-            type="text"
-            name="name"
-            id="name"
-            value={name}
-            onChange={handleName}
-          />
-          {errorMessage.name && <label htmlFor='name'>{errorMessage.name}</label>}
-
-          <label htmlFor="subject">Subject:</label>
-          <input 
-            type="text"
-            name="subject"
-            id="subject"
-            value={subject}
-            onChange={handleSubject}
-          />
-          {errorMessage.subject && <label htmlFor='subject'>{errorMessage.subject}</label>}
-
-          <label htmlFor="email">Your email:</label>
-          <input 
-            type="email"
-            name="email"
-            id="email"
-            value={email}
-            onChange={handleEmail}
-          />
-          {errorMessage.email && <label htmlFor='email'>{errorMessage.email}</label>}
-
-          <label htmlFor="body">Body:</label>
-          <textarea 
-            name="body"
-            id="body"
-            value={body}
-            onChange={handleBody}
-          />
-          {errorMessage.body && <label htmlFor='body'>{errorMessage.body}</label>}
-
-          <button type="submit">Submit</button>
-
-        </form>
-      </>
-    )
-} */

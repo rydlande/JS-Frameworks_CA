@@ -29,24 +29,27 @@ export function Specific() {
 
   return (
     <>
-      <nav className="text-xs mt-5">
-        <ol className="flex text-violet-400">
-          <li className="mr-1.5">
-            <Link to="/">Home</Link>
-          </li>
-          <li>/</li>
-          <li className="mx-1.5">
-            <Link to="/shop">Shop All</Link>
-          </li>
-          <li>/</li>
-          <li className="mx-1.5">
-            {product.title}
-          </li>
-        </ol>
-      </nav>
+      <div className="mx-1 mt-28 lg:mx-28">
+      <nav className="text-xs mt-5 lg:text-sm lg:mb-7">
+          <ol className="flex text-pink-400">
+            <li className="mr-1.5">
+              <Link to="/">Home</Link>
+            </li>
+            <li>/</li>
+            <li className="mx-1.5">
+              <Link to="/shop">Shop All</Link>
+            </li>
+            <li>/</li>
+            <li className="mx-1.5">
+              {product.title}
+            </li>
+          </ol>
+        </nav>        
+      </div>
 
-      <SpecificCard product={product} />
-
+      <div className="mx-0 mt-10 lg:mx-28">
+        <SpecificCard product={product} />
+      </div>
     </>
   )
 }

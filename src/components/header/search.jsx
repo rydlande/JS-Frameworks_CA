@@ -33,10 +33,10 @@ export function Search({ products }) {
     }
   
     return (
-      <div className="flex flex-col justify-center" ref={searchRef}>
-
-        <div className='flex flex-row'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 27" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 ml-4 mt-2.5 text-gray-500">
+      <>
+      <div className="relative mx-auto w-full max-w-xl md:mr-10" ref={searchRef}>
+        <div className='flex flex-row items-center justify-center border-b-0 lg:border-b border-gray-500'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 27" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 ml-2 md:ml-1 mt-1 md:mt-1.5 text-gray-500 md:w-6 md:h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
 
@@ -45,35 +45,33 @@ export function Search({ products }) {
             placeholder="Search..."
             value={searchInput}
             onChange={setSearch}
-            className="w-full p-2 text-sm focus:outline-none"
+            className="w-full py-2 md:py-1 pl-1.5 text-sm bg-white focus:outline-none md:text-base"
           />
         </div>
 
         {isDropdownOpen && filteredProducts.length > 0 && (
-          <div className="bg-white border-t border-t-gray-200 w-full">
+          <div className="absolute top-full mt-0 w-full bg-white shadow-lg z-10">
             {filteredProducts.map((product) => (
               <Link 
                 to={`/shop/${product.id}`} 
                 key={product.id} 
-                className="flex px-4 py-2 items-center hover:bg-gray-100 h-30 w-full object-contain cursor-pointer" 
+                className="flex items-center px-4 py-2 hover:bg-pink-50 cursor-pointer" 
                 onClick={() => {
                   setIsDropdownOpen(false);
                   setSearchInput('');
                 }}
               >
-
-                <div className='flex items-center justify-center h-10 w-10 mr-2'>
-                  <img
-                    src={product.image.url} 
-                    alt={product.title} 
-                    className="block object-cover rounded-sm max-h-10 max-w-10 lg:rounded-lg"/>
-                </div>
-                
+                <img
+                  src={product.image.url} 
+                  alt={product.title} 
+                  className="h-10 w-10 object-cover rounded-sm mr-2"
+                />
                 <p className="text-sm leading-normal my-auto">{product.title}</p>
               </Link>
             ))}
           </div>
         )}
       </div>
+      </>
     );
 }

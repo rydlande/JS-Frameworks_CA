@@ -34,3 +34,12 @@ for (let i = 0; i < arr2.length; i++) {
     }
 }
 console.log(bool);
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ["./index.html", "./src/**/*.{js,jsx}"],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  };
