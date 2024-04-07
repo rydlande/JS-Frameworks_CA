@@ -44,9 +44,7 @@ export function Specific() {
               {product.title}
             </li>
           </ol>
-        </nav>
-
-        
+        </nav>        
       </div>
 
       <div className="mx-0 mt-10 lg:mx-28">

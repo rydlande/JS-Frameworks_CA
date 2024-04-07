@@ -11,19 +11,49 @@ export function Cart() {
 
     return (
       <>
-        <h1>Cart</h1>
-        
-        <CartCard />
-        
-        <div>
-          <h3 className='line-through	'>Total Price: {totalPrice.toFixed(2)}</h3>
-          <h3>Total Discounted Price: {totalDiscountedPrice.toFixed(2)}</h3>
-          <h3>Total Discount: {totalDiscount.toFixed(2)}</h3>
-          <Link to="/cart/success">
-          <button>Checkout</button>
-          </Link>
+      <div className="mx-1 mt-28 md:mx-28">
+        <nav className="text-xs mt-5 md:text-sm md:mb-7">
+            <ol className="flex text-pink-400">
+              <li className="mr-1.5">
+                <Link to="/">Home</Link>
+              </li>
+              <li>/</li>
+              <li className="mx-1.5">
+                <Link to="/cart">Cart</Link>
+              </li>
+            </ol>
+          </nav>  
+
+          <h1 className="text-sm font-medium md:text-base mt-3">Cart</h1>
+
+          <div className="container mt-1 mx-auto flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
+            <div className="flex-1">
+              <CartCard />
+            </div>
+
+            <div className="w-full md:w-96 bg-white p-6 rounded-sm flex flex-col justify-around">
+              <h3 className="text-base font-semibold mb-4">Order Summary</h3>
+              <div className="space-y-2 text-sm md:text-base">
+                <div className="flex justify-between md:flex-col">
+                  <span className='md:text-sm md:font-light'>Sub Total</span>
+                  <span>{totalPrice.toFixed(2)} NOK</span>
+                </div>
+                <div className="flex justify-between md:flex-col">
+                  <span className='md:text-sm md:font-light'>Discount</span>
+                  <span>-{totalDiscount.toFixed(2)} NOK</span>
+                </div>
+                <div className="flex justify-between md:flex-col">
+                  <span className="md:text-sm md:font-light">Total</span>
+                  <span className="font-semibold">{totalDiscountedPrice.toFixed(2)} NOK</span>
+                </div>
+              </div>
+              <Link to="/cart/success" className="block w-full border text-base border-pink-300 text-black text-center mt-6 py-2 rounded-sm hover:bg-pink-300 hover:text-white transition duration-300">
+                Proceed to Checkout
+              </Link>
+            </div>
+          </div>      
         </div>
       </>
+      
     )
   }
-  

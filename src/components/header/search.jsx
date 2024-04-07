@@ -35,7 +35,7 @@ export function Search({ products }) {
     return (
       <>
       <div className="relative mx-auto w-full max-w-xl md:mr-10" ref={searchRef}>
-        <div className='flex flex-row items-center justify-center border-b-2 border-gray-500'>
+        <div className='flex flex-row items-center justify-center border-b-0 lg:border-b border-gray-500'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 27" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 ml-2 md:ml-1 mt-1 md:mt-1.5 text-gray-500 md:w-6 md:h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
