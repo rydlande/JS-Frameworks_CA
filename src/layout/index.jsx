@@ -1,9 +1,9 @@
 import { Header, Footer } from "../components";
 
-export function Layout({ children }) {
+export function Layout({ children, products }) {
   return (
     <>
-      <Header />
+      <Header products={products}/>
       <main className="grow">{children}</main>
       <Footer />
     </>

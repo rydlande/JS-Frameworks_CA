@@ -55,16 +55,21 @@ export const useCartStore = create((set) => ({
 
 export const useProductStore = create((set) => ({
   products: [],
-  setProducts: (products) => 
-    set(() => ({ products })),
+  loading: false,
+
+  setProducts: (products) => set({ products }),
+  
+  setLoading: (loading) => set({ loading }),
 
   fetchProducts: async () => {
+    set({ loading: true });
     try {
       const res = await fetch('https://v2.api.noroff.dev/online-shop/');
       const data = await res.json();
-      set({ products: data.data });
+      set({ products: data.data, loading: false });
     } catch (error) {
       console.error("Failed to fetch products:", error);
+      set({ loading: false });
     }
   },
 }));
