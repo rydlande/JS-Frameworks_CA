@@ -4,15 +4,10 @@ import { useEffect } from 'react';
 import { useProductStore } from './stores';
 
 function App() {
-  const { products, fetchProducts } = useProductStore((state) => ({
+  const { products } = useProductStore((state) => ({
     products: state.products,
     fetchProducts: state.fetchProducts,
   }));
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
 
   return (
     <>

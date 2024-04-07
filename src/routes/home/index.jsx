@@ -1,5 +1,5 @@
 //import { Loader } from '../../components'
-import { ProductsCardSkeleton } from '../../components/skeletons/productsCard.jsx'
+import { ProductsCardSkeleton } from '../../components'
 
 export function Home() {
     return (

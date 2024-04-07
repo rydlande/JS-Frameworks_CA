@@ -1,3 +1,3 @@
-import { ProductsCardSkeleton } from "components/skeletons/productsCard";
+import { ProductsCardSkeleton } from "./productsCard";
 
 export { ProductsCardSkeleton };

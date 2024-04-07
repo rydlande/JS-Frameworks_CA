@@ -1,6 +1,6 @@
-import { Typography, Card, CardHeader, CardBody } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 
-export const ProductsCardSkeleton = () => {
+export function ProductsCardSkeleton() {
     return (
         <>
         <div className='mx-1'>
