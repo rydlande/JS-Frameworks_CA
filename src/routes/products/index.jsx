@@ -1,7 +1,7 @@
 export { Link } from 'react-router-dom';
 import { ProductsCard } from "../../components";
-import { Loader } from '../../components';
-import { useProductStore } from '../../stores';
+/* import { Loader } from '../../components';
+ */import { useProductStore } from '../../stores';
 
 
 export function Products() {
@@ -14,7 +14,7 @@ export function Products() {
     return (
       <>
       <div className='mx-1'>
-      <Loader />
+      {/* <Loader /> */}
         <div className='flex flex-wrap justify-center mt-28'>
           <ProductsCard products={products} />
         </div>
