@@ -5,3 +5,4 @@
     - lage skeleton til home-page
     - justere litt på bildene som vises på specific-page
     - nytt design på contact-page
+    - + / - knapper i cart for å kunne justere antall items
