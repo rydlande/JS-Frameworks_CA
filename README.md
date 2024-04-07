@@ -6,3 +6,6 @@
     - justere litt på bildene som vises på specific-page
     - nytt design på contact-page
     - + / - knapper i cart for å kunne justere antall items
+    - legge inn scroll der det er mer enn ett bilde
+    - justere design på specific for phone
+    - legge til sum i checkout success
