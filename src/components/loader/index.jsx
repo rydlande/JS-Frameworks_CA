@@ -1,5 +1,5 @@
-/* import { useState, useEffect } from 'react';
-import { Player } from '@lottiefiles/react-lottie-player';
+//import { useState, useEffect } from 'react';
+/* import { Player } from '@lottiefiles/react-lottie-player';
 
 export const Loader = () => {
   return (
@@ -7,11 +7,27 @@ export const Loader = () => {
       <Player
         autoplay
         loop
-        src="https://assets10.lottiefiles.com/packages/lf20_4vq9wz.json"
+        src='https://assets10.lottiefiles.com/packages/lf20_4vq9wz.json'
         style={{ height: '300px', width: '300px' }}
       />
     </div>
-  ); */
+  );
+}; */
+
+import loader from '../../assets/loader.json'
+import React from "react";
+import Lottie from "lottie-react";
+
+
+export const Loader = () => {
+  return (
+    <div className="flex justify-center items-center h-96 w-36 m-auto">
+      <Lottie animationData={loader} />
+    </div>
+  )
+};
+
+
   /* const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
@@ -35,5 +51,4 @@ export const Loader = () => {
       {animationData && <Lottie animationData={animationData} loop autoplay style={style} />}
     </>
   ); */
-/* };
- */
+
