@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react';
-import Lottie from 'lottie-react';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export const Loader = () => {
-  const [animationData, setAnimationData] = useState(null);
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Player
+        autoplay
+        loop
+        src="https://assets10.lottiefiles.com/packages/lf20_4vq9wz.json"
+        style={{ height: '300px', width: '300px' }}
+      />
+    </div>
+  );
+  /* const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
     const fetchAnimationData = async () => {
@@ -24,5 +34,5 @@ export const Loader = () => {
     <>
       {animationData && <Lottie animationData={animationData} loop autoplay style={style} />}
     </>
-  );
+  ); */
 };
