@@ -55,7 +55,7 @@ export function Search({ products }) {
               <Link 
                 to={`/shop/${product.id}`} 
                 key={product.id} 
-                className="flex items-center px-4 py-2 hover:bg-pink-50 cursor-pointer" 
+                className="flex items-center px-4 py-2 hover:bg-blue-50 cursor-pointer" 
                 onClick={() => {
                   setIsDropdownOpen(false);
                   setSearchInput('');

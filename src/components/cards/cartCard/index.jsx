@@ -26,7 +26,7 @@ export function CartCard() {
                 <p className="font-light text-xs md:text-sm mr-2">{product.quantity} item(s) </p>
                 <button 
                   onClick={() => removeFromCart(product.id)}
-                  className="text-pink-300 hover:text-pink-500 text-xs md:text-sm lg:hover:text-medium"
+                  className="text-blue-300 hover:text-blue-500 text-xs md:text-sm lg:hover:text-medium"
                 >
                   Remove
                 </button>

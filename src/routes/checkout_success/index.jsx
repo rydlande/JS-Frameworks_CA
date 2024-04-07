@@ -27,7 +27,7 @@ export function CheckoutSuccess() {
             <CheckoutSuccessCard  order={order}/>
           </div>
 
-          <Link to="/" className="border border-pink-300 px-2 py-1.5 hover:bg-pink-300 hvoer:text-black mt-8">
+          <Link to="/" className="border border-blue-300 px-2 py-1.5 hover:bg-blue-300 hvoer:text-black mt-8">
             <p className="text-sm">Back to home page</p>
           </Link>
         </div>

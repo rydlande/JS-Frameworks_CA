@@ -31,16 +31,16 @@ export function Header({ products }) {
                 Nonsense
               </Link>
 
-              <Link to="/" className="px-4 py-2 text-lg text-gray-700 hover:text-pink-500">Home</Link>
-              <Link to="/shop" className="px-4 py-2 text-lg text-gray-700 hover:text-pink-500">Shop all</Link>
-              <Link to="/contact" className="px-4 py-2 text-lg text-gray-700 hover:text-pink-500">Contact</Link>   
+              <Link to="/" className="px-4 py-2 text-lg text-gray-700 hover:text-blue-500">Home</Link>
+              <Link to="/shop" className="px-4 py-2 text-lg text-gray-700 hover:text-blue-500">Shop all</Link>
+              <Link to="/contact" className="px-4 py-2 text-lg text-gray-700 hover:text-blue-500">Contact</Link>   
             </div>
 
             <div className="flex">
               <Search products={products} />
               
 
-              <Link to="/cart" className="flex justify-center items-center mr-6 hover:text-pink-500">
+              <Link to="/cart" className="flex justify-center items-center mr-6 hover:text-blue-500">
                 <div className="w-5 h-7" aria-hidden={cart.length === 0}>
                   {cart.length > 0 && (
                     <p className="text-lg font-light">{cart.length}</p>

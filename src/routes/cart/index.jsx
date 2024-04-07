@@ -13,7 +13,7 @@ export function Cart() {
       <>
         <div className="mx-1 mt-28 md:mx-28">
           <nav className="text-xs mt-5 md:text-sm md:mb-7">
-              <ol className="flex text-pink-400">
+              <ol className="flex text-blue-400">
                 <li className="mr-1.5">
                   <Link to="/">Home</Link>
                 </li>
@@ -48,7 +48,7 @@ export function Cart() {
               </div>
               <Link
                 to={cart.length > 0 ? "/cart/success" : "#"}
-                className={`block w-full border text-base border-pink-300 text-black text-center mt-6 py-2 rounded-sm ${cart.length > 0 ? 'hover:bg-pink-300 hover:text-white' : 'bg-pink-300 text-gray-700 cursor-not-allowed'}`}
+                className={`block w-full border text-base border-blue-300 text-black text-center mt-6 py-2 rounded-sm ${cart.length > 0 ? 'hover:bg-blue-300 hover:text-white' : 'bg-blue-300 text-gray-700 cursor-not-allowed'}`}
                 aria-disabled={cart.length === 0}
               >
               Proceed to Checkout
