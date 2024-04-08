@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom"
 
 export function ProductsCard({ products }) {
-
     return (
         <>
         {products ? products.map((product) => {
           return (
             <Link to={`/shop/${product.id}`} key={product.id} >
-              <div className="flex flex-col w-36 mx-1 mb-7 lg:w-60 lg:mx-3 lg:mb-11">
+              <div className="flex flex-col w-36 mx-1 mb-7 md:mx-2 lg:w-56 lg:mx-5 lg:mb-11">
                 <img 
                   src={product.image.url} 
                   alt={product.title} 

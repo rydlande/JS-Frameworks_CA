@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Home, Specific, Cart, Products, Contact, CheckoutSuccess } from './routes';
+import { Specific, Cart, Products, Contact, CheckoutSuccess } from './routes';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +37,6 @@ const router = createBrowserRouter([
     ]
   }
 ]);
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

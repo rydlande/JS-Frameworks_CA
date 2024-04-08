@@ -34,28 +34,27 @@ export function Search({ products }) {
   
     return (
       <>
-      <div className="relative mx-auto w-full max-w-xl md:mr-10" ref={searchRef}>
-        <div className='flex flex-row items-center justify-center border-b-0 lg:border-b border-gray-500'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 27" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 ml-2 md:ml-1 mt-1 md:mt-1.5 text-gray-500 md:w-6 md:h-5">
+      <div className="relative mx-auto w-full max-w-xl lg:mr-10" ref={searchRef}>
+        <div className='flex flex-row items-center justify-center border-b-0 lg:border-b border-dark'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 27" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 ml-2 mt-1 text-dark lg:ml-1 lg:mt-1.5 lg:w-6 lg:h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
-
           <input
             type="text"
             placeholder="Search..."
             value={searchInput}
             onChange={setSearch}
-            className="w-full py-2 md:py-1 pl-1.5 text-sm bg-white focus:outline-none md:text-base"
+            className="w-full py-2 pl-1.5 text-sm max-w-80 bg-light placeholder:text-dark focus:outline-none lg:py-1 lg:text-base"
           />
         </div>
-
+        
         {isDropdownOpen && filteredProducts.length > 0 && (
           <div className="absolute top-full mt-0 w-full bg-white shadow-lg z-10">
             {filteredProducts.map((product) => (
               <Link 
                 to={`/shop/${product.id}`} 
                 key={product.id} 
-                className="flex items-center px-4 py-2 hover:bg-blue-50 cursor-pointer" 
+                className="flex items-center px-4 py-2 hover:bg-gray cursor-pointer" 
                 onClick={() => {
                   setIsDropdownOpen(false);
                   setSearchInput('');
@@ -66,7 +65,7 @@ export function Search({ products }) {
                   alt={product.title} 
                   className="h-10 w-10 object-cover rounded-sm mr-2"
                 />
-                <p className="text-sm leading-normal my-auto">{product.title}</p>
+                <p className="text-sm my-auto">{product.title}</p>
               </Link>
             ))}
           </div>

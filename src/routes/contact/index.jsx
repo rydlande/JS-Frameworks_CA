@@ -16,8 +16,6 @@ export function Contact() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema),
   });
-
-  
   
   const onSubmit = data => {
     console.log('Form submission is successful.', data);
@@ -42,10 +40,10 @@ export function Contact() {
             >Full name:</label>
             <input
               type="text"
-              className='rounded-sm px-2 py-1 bg-blue-100'
+              className='rounded-sm px-2 py-1 bg-gray'
               {...register('name')}
             />
-            {errors.name && <p className='text-xs text-blue-500'>{errors.name.message}</p>}
+            {errors.name && <p className='text-xs text-dark'>{errors.name.message}</p>}
 
             <label 
               htmlFor="subject"
@@ -53,10 +51,10 @@ export function Contact() {
             >Subject:</label>
             <input
               type="text"
-              className='rounded-sm px-2 py-1 bg-blue-100 '
+              className='rounded-sm px-2 py-1 bg-gray '
               {...register('subject')}
             />
-            {errors.subject && <p className='text-xs text-blue-500'>{errors.subject.message}</p>}
+            {errors.subject && <p className='text-xs text-dark'>{errors.subject.message}</p>}
 
             <label 
               htmlFor="email"
@@ -64,26 +62,26 @@ export function Contact() {
             >Your email:</label>
             <input
               type="email"
-              className='rounded-sm px-2 py-1 bg-blue-100'
+              className='rounded-sm px-2 py-1 bg-gray'
               {...register('email')}
             />
-            {errors.email && <p className='text-xs text-blue-500'>{errors.email.message}</p>}
+            {errors.email && <p className='text-xs text-dark'>{errors.email.message}</p>}
 
             <label 
               htmlFor="body"
               className='text-sm font-light text-gray-950 pt-4 pb-1'
             >Body:</label>
             <textarea 
-              className='rounded-sm px-2 py-1 bg-blue-100'
+              className='rounded-sm px-2 py-1 bg-gray'
               {...register('body')}
             />
-            {errors.body && <p className='text-xs text-blue-500'>{errors.body.message}</p>}
+            {errors.body && <p className='text-xs text-dark'>{errors.body.message}</p>}
 
-            {isSubmittedSuccessfully && <p className="text-blue-600 mt-2">Form submitted successfully!</p>}
+            {isSubmittedSuccessfully && <p className="text-dark mt-2">Form submitted successfully!</p>}
 
             <button 
               type="submit"
-              className='border border-blue-300 px-2 py-1.5 hover:bg-blue-300 hover:text-black mt-8 rounded-sm'
+              className='border border-light px-2 py-1.5 hover:bg-light hover:text-dark mt-8 rounded-sm'
             >Submit</button>
           </form>
         </div>

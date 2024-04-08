@@ -5,21 +5,11 @@ const config = withMT({
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     colors: {
-      'white': '#FAFAFA',
-      'black': '#000000',
-      'pink': {
-        50: '#fdf2f8',
-        100: '#fce7f3',
-        200: '#fbcfe8',
-        300: '#f9a8d4',
-        400: '#f472b6',
-        500: '#ec4899',
-        600: '#db2777',
-        700: '#be185d',
-        800: '#9d174d',
-        900: '#831843',
-        950: '#500724',
-      },
+      'white': '#F0EFEA',
+      'black': '##1B1B1B',
+      'dark': '#283517',
+      'light': '#B8B7A5',
+      'gray': '#D4D4D4',
       'purple': {
         50: '#faf5ff',
         100: '#f3e8ff',
@@ -46,7 +36,7 @@ const config = withMT({
         900: '#1e3a8a',
         950: '#172554',
       },
-      'gray': {
+      /* 'gray': {
         50: '#fafafa',
         100: '#f4f4f5',
         200: '#e4e4e7',
@@ -58,7 +48,7 @@ const config = withMT({
         800: '#27272a',
         900: '#18181b',
         950: '#09090b',
-      },
+      }, */
     },
     extend: {
       fontSize: {
@@ -67,6 +57,7 @@ const config = withMT({
       fontFamily: {
         main: ['"montserrat"', 'sans-serif'],
         'montserrat-alternates': ['"montserrat-alternates"', 'sans-serif'],
+        'logo': ['"bely-display"', 'sans-serif'],
       },
       fontWeight: {
         thin: 100,
@@ -79,7 +70,7 @@ const config = withMT({
       },
       boxShadow: {
         'card': '0px 54px 55px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09)'
-      }
+      },
     },
   },
   plugins: [],

@@ -4,7 +4,7 @@ export function Layout({ children, products }) {
   return (
     <>
       <Header products={products}/>
-      <main className="grow">{children}</main>
+        <main className="grow">{children}</main>
       <Footer />
     </>
   )

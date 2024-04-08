@@ -10,28 +10,22 @@ export function CheckoutSuccess() {
   useEffect(() => {
     setOrder(cart);
     clearCart();
-  }, [])
+  }, []);
 
+  return (
+    <div className='flex flex-col items-center justify-center py-10 mt-12'>
+      <div className="w-full max-w-md p-4 bg-white rounded-lg text-center">
+        <h1 className="font-medium text-xl mb-4">Checkout Success</h1>
+        <p className="text-sm mb-4">Thank you for your purchase!</p>
+        <p className="text-sm mb-8">Your order is soon on its way.</p>
+        <p className="text-sm mb-4">Order details:</p>
 
-     return (
-       <>
-        <div className='mx-1 mt-28 lg:mx-28 flex flex-col items-center'>
-          <div className="mb-4 text-center">
-            <h1 className="font-medium text-xl">Checkout Success</h1>
-            <p className="mt-2 text-sm">Thank you for your purchase!</p>
-            <p className="text-sm">Your order is soon on it's way.</p>
-          </div>
+        <CheckoutSuccessCard order={order}/>
 
-          <div>
-            <p className="mt-8 text-sm text-center">Order details:</p>
-            <CheckoutSuccessCard  order={order}/>
-          </div>
-
-          <Link to="/" className="border border-blue-300 px-2 py-1.5 hover:bg-blue-300 hvoer:text-black mt-8">
-            <p className="text-sm">Back to home page</p>
-          </Link>
-        </div>
-         
-       </>
-     )
-   }
+        <Link to="/shop" className="mt-8 inline-block border border-light px-4 py-2 rounded-sm hover:bg-dark hover:text-white">
+          Back to shop
+        </Link>
+      </div>
+    </div>
+  );
+}
