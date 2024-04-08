@@ -6,14 +6,14 @@ export function ProductsSkeleton() {
         <div className='flex flex-wrap animate-pulse justify-center mx-1 mt-[148px] lg:mx-28 lg:mt-[160px]'>
           {skeletonCount.map((_, index) => (
             <div key={index} className="flex flex-col w-36 mx-1 mb-6 lg:w-60 lg:mx-3 lg:mb-11">
-                <div className="flex justify-center items-center rounded-sm bg-blue-200 w-full h-48 lg:h-80">
+                <div className="flex justify-center items-center rounded-sm bg-light w-full h-48 lg:h-80">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={2}
                         stroke="currentColor"
-                        className="h-12 w-12 text-blue-500"
+                        className="h-12 w-12 text-dark"
                         >
                         <path
                             strokeLinecap="round"
@@ -22,8 +22,8 @@ export function ProductsSkeleton() {
                         />
                     </svg>
                 </div>
-                <div className="mb-2 mt-2 h-2 w-28 rounded-full bg-blue-200 lg:w-full" />
-                <div className="mb-2 mt-2 h-2 w-28 rounded-full bg-blue-200 lg:w-3/4" />
+                <div className="mb-2 mt-2 h-2 w-28 rounded-full bg-light lg:w-full" />
+                <div className="mb-2 mt-2 h-2 w-28 rounded-full bg-light lg:w-3/4" />
             </div>
             ))}
         </div>

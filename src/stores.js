@@ -28,29 +28,40 @@ export const useCartStore = create((set) => ({
 
   removeFromCart: (id) =>
     set((state) => {
-      const quantity = state.cart.find((product) => product.id === id).quantity;
-      console.log(quantity);
-      if(quantity <= 1) {
       const updatedCart = state.cart.filter((product) => product.id !== id);
       localStorage.setItem('cart', JSON.stringify(updatedCart));
       return { cart: updatedCart };
-      } else {
-        const updatedCart = state.cart.map((product) => {
-          if (product.id === id) {
-            product.quantity -= 1; //-= etter verdi, = lager ny verdi
-          }
-          return product;
-        });
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-        return { cart: updatedCart };
-      }
     }),
 
   clearCart: () =>
     set(() => {
       localStorage.removeItem('cart');
       return { cart: [] };
-    })
+    }),
+
+  increaseQuantity: (id) =>
+    set((state) => {
+      const updatedCart = state.cart.map((item) => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      return { cart: updatedCart };
+    }),
+
+  decreaseQuantity: (id) =>
+    set((state) => {
+      const updatedCart = state.cart.map((item) => {
+        if (item.id === id && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      return { cart: updatedCart };
+    }),
 }));
 
 export const useProductStore = create((set) => ({
