@@ -31,9 +31,9 @@ export function Header({ products }) {
                 Nonsense
               </Link>
 
-              <Link to="/" className="px-4 py-2 lg:text-lg text-gray-700 hover:text-dark">Home</Link>
-              <Link to="/shop" className="px-4 py-2 lg:text-lg text-gray-700 hover:text-dark">Shop all</Link>
-              <Link to="/contact" className="px-4 py-2 lg:text-lg text-gray-700 hover:text-dark">Contact</Link>   
+              <Link to="/" className="px-4 py-2 lg:text-lg text-dark hover:text-dark">Home</Link>
+              <Link to="/shop" className="px-4 py-2 lg:text-lg text-dark hover:text-dark">Shop all</Link>
+              <Link to="/contact" className="px-4 py-2 lg:text-lg text-dark hover:text-dark">Contact</Link>   
             </div>
 
             <div className="flex">

@@ -21,7 +21,7 @@ export function CheckoutSuccessCard({ order }) {
         </div>
       ))}
 
-      <div className="mt-4 p-4 bg-gray-100 rounded-md shadow-lg">
+      <div className="mt-4 p-4  rounded-md shadow-lg">
         <p className="text-lg font-semibold mb-4">Price Summary</p>
         <div className="flex justify-between mt-2">
           <p>Subtotal:</p>

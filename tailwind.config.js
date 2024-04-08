@@ -5,11 +5,11 @@ const config = withMT({
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     colors: {
-      'white': '#F0EFEA',
-      'black': '##1B1B1B',
-      'dark': '#283517',
-      'light': '#B8B7A5',
-      'gray': '#D4D4D4',
+      'white': '#FAFAFA',
+      'black': '#1B1B1B',
+      'dark': '#5C68D6',
+      'light': '#C2CAFF',
+      'gray': '#FF7738',
       'purple': {
         50: '#faf5ff',
         100: '#f3e8ff',
