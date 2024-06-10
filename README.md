@@ -1,5 +1,7 @@
 ### Javascript Frameworks - ECommerce Store Project
 
+![Screenshot 2024-06-10 at 21 37 16](https://github.com/rydlande/JS-Frameworks_CA/assets/112164731/2ec1558c-03c3-449e-93ac-9944ed34faaa)
+
 
 ## Simple Overview
 Create a responsive eCommerce store using React, featuring product listings, search, and a complete checkout process.
