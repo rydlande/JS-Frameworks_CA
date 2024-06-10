@@ -1,40 +1,45 @@
-### This is for a school project at Noroff
+### Javascript Frameworks - ECommerce Store Project
 
-# Assignment:
-Goal
-To apply knowledge of React to build an eCom store.
 
-Brief
-The API you are using for this brief is: https://v2.api.noroff.dev/online-shop
+## Simple Overview
+Create a responsive eCommerce store using React, featuring product listings, search, and a complete checkout process.
 
-You can find individual items by appending a product ID at the end of the API URL e.g. https://v2.api.noroff.dev/online-shop/f99cafd2-bd40-4694-8b33-a6052f36b435
+## Description
+Develop an eCommerce store with the following pages: Homepage, Individual Product Page, Cart Page, and Checkout Success Page. Includes a contact form with validation.
 
-You are tasked with build out the following pages for an eCom store:
+## Features:
+- Product list with look-ahead search bar
+- Detailed product pages with reviews
+- Add to cart functionality
+- View cart and proceed to checkout
+- Contact form with validation
 
-Homepage
-Individual product page
-Cart page
-Checkout success page
-The Homepage should have a list of all the products. There should be a look-ahead search bar that filters products when typing in a product name. Clicking on a product should take a user to an individual product page.
+## Build with
+- React.js
+- Tailwind CSS
 
-You pages should use a "<Layout>" component that contains a header and footer. The header should contain a nav bar as well as a Cart icon component that acts as a button as well as displays the current number of items in the cart.
+## Installation and Setup
 
-The individual product page should display data for a single product. There should be an Add to cart button which, upon clicking, adds the product to the cart. The product page should display the title of the product, the description and the image. There should also be reviews listed for the product, if there are any. You should use the discountedPrice property to display the price of the product. If there is a difference between the discountedPrice and price properties then that means there is a discount for that product. Calculate what this discount is and display it on the page.
+```
+# Clone the repository
+git clone https://github.com/rydlande/JS-Frameworks_CA.git
 
-Clicking on the Cart icon will load the Cart page, which will list all of the products as well as a total. The Cart page will have a Checkout button. Clicking this Checkout button then goes to a Checkout success page.
+# Install dependencies
+npm install
 
-The Checkout success page will display a message to the user notifying them that their order was successful. There should also be a link that lets a user go back to the store. The cart must be cleared if the user gets to the Checkout success page.
+# Run the development server
+npm run dev
 
-There will be a contact page which will contain a contact form with the following fields. There must be form validation:
+# Build for production
+npm run build
 
-Full name (Minimum number of characters is 3, required)
-Subject (Minimum number of characters is 3, required)
-Email (Must be a valid email address, required)
-Body (Minimum number of characters is 3, required)
-You will be using React Router to switch between pages.
+# Preview the production build
+npm run preview
+```
 
-Your design should be responsive. You are welcome to use a CSS Framework, however, you’re encouraged to design from scratch and use styled-components or CSS Modules.
 
-You are not required to use TypeScript.
+## Contact
+For more information on this project, please reach out to the developer eirryd24360@stud.noroff.no.
 
-Your code is expected to be clean and well-formatted.
+## Acknowledgments
+Special thanks to the instructors and fellow students who provided guidance and support throughout this project.
