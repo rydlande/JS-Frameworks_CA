@@ -42,4 +42,4 @@ npm run preview
 For more information on this project, please reach out to the developer eirryd24360@stud.noroff.no.
 
 ## Acknowledgments
-Special thanks to the instructors and fellow students who provided guidance and support throughout this project.
+Special thanks to my teacher and fellow students who provided guidance and support throughout this project.
